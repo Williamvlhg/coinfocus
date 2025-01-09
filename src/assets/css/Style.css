@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a0033);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+  
+.auth-container {
+background: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+padding: 3rem;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+}
+  
+.auth-container h2 {
+text-align: center;
+margin-bottom: 1rem;
+font-size: 1.8rem;
+color: #fff;
+}
+  
+.auth-container form {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.auth-container .form-input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+  
+.auth-container label {
+margin-bottom: 0.5rem;
+font-weight: bold;
+display: flex;
+align-items: center;
+}
+  
+.auth-container input {
+background: rgba(255, 255, 255, 0.2);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 0.8rem;
+margin: 0.8rem;
+border-radius: 5px;
+color: white;
+margin-bottom: 1rem;
+font-size: 1rem;
+}
+  
+.auth-container input::placeholder {
+color: rgba(255, 255, 255, 0.6);
+}
+  
+.auth-container button {
+padding: 0.8rem;
+border: none;
+border-radius: 5px;
+width: 70%;
+background: linear-gradient(90deg, #5e00e7, #ffb400);
+color: white;
+font-size: 1rem;
+font-weight: bold;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+}
+  
+.auth-container button:hover {
+opacity: 0.9;
+}
+  
+.auth-container a {
+text-align: center;
+color: #fff;
+margin-top: 1rem;
+display: block;
+text-decoration: none;
+font-size: 0.9rem;
+opacity: 0.8;
+}
+  
+.auth-container a:hover {
+opacity: 1;
+}
+  
