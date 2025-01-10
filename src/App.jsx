@@ -1,9 +1,11 @@
-import React from 'react';
+// import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import TradingPage from './pages/TradingPage';
-import BlogPage from './pages/BlogPage';
-import CryptoDetailsPage from './Pages/CryptoDetailsPage';
+import TradingPage from './Pages/trading/TradingPage';
+import BlogPage from './Pages/blog/BlogPage';
+import CryptoDetailsPage from './Pages/crypto/CryptoDetailsPage';
+
+
 import './App.css'
 const App = () => {
   return (

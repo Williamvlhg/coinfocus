@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const PostForm = ({ onAddPost }) => {
   // Crée un état pour chaque crypto, contenant title, content et likes

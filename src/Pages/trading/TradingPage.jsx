@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import CryptoPrices from "../components/Trading/CryptoPrices";
-import TradeForm from "../components/Trading/TradeForm";
-import Portfolio from "../components/Trading/Portfolio";
-import TransactionHistory from "../components/Trading/TransactionHistory";
+import { useState, useEffect } from "react";
+import CryptoPrices from "../../components/Trading/CryptoPrices";
+import TradeForm from "../../components/Trading/TradeForm";
+import Portfolio from "../../components/Trading/Portfolio";
+import TransactionHistory from "../../components/Trading/TransactionHistory";
 import "./TradingPage.css";
 
 const getFromLocalStorage = (key, defaultValue) => {

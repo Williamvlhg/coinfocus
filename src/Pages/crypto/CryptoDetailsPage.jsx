@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
-import PostList from "../components/MiniBlog/PostList";
-import PostForm from "../components/MiniBlog/PostForm";
+import PostList from "../../components/MiniBlog/PostList";
+import PostForm from "../../components/MiniBlog/PostForm";
 
 const CryptoDetailsPage = () => {
   const { cryptoId } = useParams();

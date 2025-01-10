@@ -1,9 +1,6 @@
-import React from 'react';
-
 const Portfolio = ({ balance, holdings, prices }) => {
-  // Vérification que prices est défini et contient les informations nécessaires
   if (!prices) {
-    return <p>Chargement des prix...</p>;  // Message de chargement si les prix ne sont pas encore disponibles
+    return <p>Chargement des prix...</p>;
   }
 
   const totalHoldingsValue = Object.entries(holdings).reduce(

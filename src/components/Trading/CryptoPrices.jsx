@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const CryptoPrices = ({onUpdatePrices}) => {
   const [prices, setPrices] = useState({});
