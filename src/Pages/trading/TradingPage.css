@@ -17,6 +17,7 @@ body {
 }
 
 .trading-header {
+  margin-top: 100px;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -34,7 +35,7 @@ body {
 
 .crypto-prices-section {
   flex: 1;
-  background-color: #1e1e1e;
+  background: linear-gradient(145deg, #33024d, #1a1a1a);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -59,14 +60,14 @@ body {
 
 .trade-form-section {
   flex: 1;
-  background-color: #1e1e1e;
+  background: linear-gradient(145deg, #33024d, #1a1a1a);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 .portfolio {
   flex: 1; 
-  background-color: #1e1e1e;
+  background: linear-gradient(145deg, #33024d, #1a1a1a);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -102,7 +103,7 @@ body {
 }
 
 .transaction-history-section {
-  background-color: #1e1e1e;
+  background: linear-gradient(145deg, #2b0341, #1a1a1a);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);

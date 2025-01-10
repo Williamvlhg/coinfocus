@@ -2,7 +2,7 @@ const History = ({ transactions }) => {
   return (
     <div className="section-history">
         <div className="transactions-history">
-            <h2>Transactions history</h2>
+            <h2>Historique des transactions</h2>
             <ul>
                 {transactions.map((transaction, index) => (
                 <li key={index}>
@@ -10,7 +10,7 @@ const History = ({ transactions }) => {
                     {transaction.currency || ''} 
                     {transaction.address && (
                     <>
-                        to the address <strong>{transaction.address}</strong>
+                        vers cette adresse <strong>{transaction.address}</strong>
                     </>
                     )}
                     - {new Date(transaction.date).toLocaleString()}

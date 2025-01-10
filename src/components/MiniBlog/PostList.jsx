@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Importation de useState
+import { useState } from 'react'; // Importation de useState
 
 const PostList = ({ posts, onEditPost, onDeletePost, onLikePost }) => {
   const [expandedPostId, setExpandedPostId] = useState(null);

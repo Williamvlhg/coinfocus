@@ -123,7 +123,7 @@ const TradingPage = () => {
         <h1>Trader des Cryptos</h1>
       </div>
 
-      <div className="trading-main">
+      <div className="trading-main ">
         <div className="crypto-prices-section">
           <CryptoPrices onUpdatePrices={updatePrices} />
         </div>
