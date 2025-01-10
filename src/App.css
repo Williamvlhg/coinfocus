@@ -12,3 +12,61 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+=======
+/* Styles généraux */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Couleur sombre de fond */
+  color: #e0e0e0; /* Couleur claire pour le texte */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  color: #f5ba00; /* Jaune similaire au style de Binance */
+  text-align: center;
+}
+
+
+/* Fixer la navbar en haut et la rendre transparente */
+nav {
+  position: fixed;  /* Fixe la navbar en haut de la page */
+  top: 0;           /* Positionne la navbar au sommet */
+  left: 0;
+  right: 0;
+  background-color: rgba(50, 51, 51, 0.5); /* Couleur de fond avec transparence */
+  padding: 10px;
+  z-index: 1000; /* Assure que la navbar est au-dessus des autres éléments */
+}
+
+/* Enlever les puces et espacement dans le menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centrer les liens horizontalement */
+  margin: 0;
+}
+
+/* Espacement entre les éléments de la navbar */
+nav ul li {
+  margin: 0 20px;
+}
+
+/* Style des liens de la navbar */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s; /* Effet de transition lors du hover */
+}
+
+/* Effet de survol des liens */
+nav ul li a:hover {
+  color: #f0f0f0;
+}
+
+/* Ajouter un padding en bas pour que la navbar ne cache pas le contenu */
+body {
+  padding-top: 60px;  /* Ajustez cette valeur selon la hauteur de la navbar */
+}

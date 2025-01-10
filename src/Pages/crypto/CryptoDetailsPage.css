@@ -1,0 +1,33 @@
+.crypto-details-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #f5ba00;
+}
+
+.price-chart {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.crypto-stats {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  color: #e0e0e0;
+}
+
+.crypto-blog {
+  margin-top: 40px;
+}
+
+.crypto-blog h2 {
+  margin-bottom: 20px;
+  color: #f5ba00;
+}
+  

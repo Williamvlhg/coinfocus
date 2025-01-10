@@ -1,13 +1,16 @@
-import { useNavigate } from 'react-router-dom';
+
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Form from '../../Components/Form';
+import Login from './Login';
 
 const Register = () => {
   const navigate = useNavigate();
 
   const registerFields = [
-    { name: 'username', label: 'Username', type: 'text', required: true },
+
+    { name: 'username', label: 'Nom d\'utilisateur', type: 'text', required: true },
     { name: 'email', label: 'Email', type: 'email', required: true },
-    { name: 'password', label: 'Password', type: 'password', required: true },
+    { name: 'password', label: 'Mot de passe', type: 'password', required: true },
   ];
 
   const handleRegisterSubmit = (data) => {
@@ -21,7 +24,8 @@ const Register = () => {
     }
   };
 
-  return <Form title="Register" fields={registerFields} onSubmit={handleRegisterSubmit} />;
+  return <Form title="Inscription" fields={registerFields} onSubmit={handleRegisterSubmit} />
+  
 };
 
 export default Register;
