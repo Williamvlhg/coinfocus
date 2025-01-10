@@ -25,7 +25,7 @@ const Header = () => {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/market">Marché</Link></li>
               <li><Link to="/transaction">Transaction</Link></li>
-              <li><Link to="/trading">Portfolio</Link></li>
+              <li><Link to="/trading">Passer un ordre</Link></li>
               <li><Link to="/blog">Communauté</Link></li>
               <li><Link to="/profile">Profile</Link></li>
             </div>
