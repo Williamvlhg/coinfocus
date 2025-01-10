@@ -4,27 +4,17 @@ import Home from './pages/Home'
 import Login from './pages/Connexion/Login';
 import Register from './pages/Connexion/Register';
 import Transaction from './pages/transactions/Transaction';
-import Header from './pages/Header';
-
 function App() {
 
   return (
     <Router>
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/transaction" element={<Transaction />} />
-      <Route
-        path="/"
-        element={
-          <>
-            <Header />
-            <Home />
-          </>
-        }
-      />
-    </Routes>
-  </Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/transaction" element={<Transaction />} />
+        <Route path="/" element={<Home />}/>
+      </Routes>
+    </Router>
   )
 }
 
