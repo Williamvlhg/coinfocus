@@ -9,6 +9,7 @@ import Login from './pages/Connexion/Login';
 import Register from './pages/Connexion/Register';
 import Transaction from './Pages/transactions/Transaction';
 import Profile from './pages/profile/Profile';
+import Market from './pages/market/Market';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/transaction" element={<Transaction />} />
+            <Route path="/market" element={<Market />} />
           </Routes>
         </main>
       </div>
