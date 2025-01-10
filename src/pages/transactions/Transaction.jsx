@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Form from "../../Components/Form";
+import Header from "../../Components/Header";
 import History from "./History";
 
 
@@ -96,13 +97,15 @@ const Transaction = () => {
   };
 
   return (
+    <>
+      <Header />
     <div className="App-transactions">
       <div className="header-transactions">
 
         <h1 className="white">Mon portefeuille</h1>
         <div className="balance-title white">
           <h2></h2>
-          <h2>Solde Crypto : {wallet.cryptoBalance}</h2>
+          <h2 className="with-margin">Solde Crypto : {wallet.cryptoBalance}</h2>
           <h2>Solde en dollars : {wallet.dollarBalance} $</h2>
           <h2></h2>
         </div>
@@ -159,7 +162,7 @@ const Transaction = () => {
                     ? [
 
                         { name: "amount", label: "Montant", type: "number", required: true },
-                        { name: "address", label: "L'adresse du portefeuille", type: "text", required: true },
+                        { name: "address", label: "Portefeuille", type: "text", required: true },
                       ]
                     : [
                         { name: "amount", label: "Montant", type: "number", required: true },
@@ -173,6 +176,7 @@ const Transaction = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
