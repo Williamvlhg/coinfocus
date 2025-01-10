@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Login from './pages/Connexion/Login';
 import Register from './pages/Connexion/Register';
 import Transaction from './pages/transactions/Transaction';
-import Header from './pages/Header';
+import Header from './Components/Header';
 
 function App() {
 

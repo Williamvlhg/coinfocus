@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './Connexion/Login';
-import Register from './Connexion/Register';
+import Login from '../pages/Connexion/Login';
+import Register from '../pages/Connexion/Register';
 
 
 const Header = () => {
@@ -25,4 +25,4 @@ const Header = () => {
     );
   };
   
-  export default Header;
+export default Header;

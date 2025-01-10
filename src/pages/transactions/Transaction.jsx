@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import Form from "../../Components/Form";
 import History from "./History";
+// import Header from "../../Components/Header";
+
+
+
 
 const Transaction = () => {
   const [wallet, setWallet] = useState(() => {
