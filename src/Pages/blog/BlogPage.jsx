@@ -64,6 +64,7 @@ const BlogPage = () => {
   }
 
   return (
+    <>
     <div>
       <h1>Mini-Blog</h1>
       <div className="select-container">
@@ -91,6 +92,7 @@ const BlogPage = () => {
         onLikePost={handleLikePost}
       />
     </div>
+    </>
   );
 };
 

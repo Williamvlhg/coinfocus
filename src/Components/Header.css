@@ -48,7 +48,6 @@ nav {
 .main-links {
   display: flex;
   justify-content: center;
-  width: 75%;
   margin: 0;
   padding-right: 15px; /* Reduced padding */
 }

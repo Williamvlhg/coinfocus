@@ -1,7 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Form from '../../Components/Form';
-import Login from './Login';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -31,8 +30,10 @@ const Register = () => {
       const walletAddress = '0x' + Math.random().toString(16).substr(2, 40);
   
       const userData = { ...data, wallet_address: walletAddress };
+      const walletData = {  wallet_address: walletAddress, cryptoBalance: 0, dollarBalance: 0 };
       localStorage.setItem('user', JSON.stringify(userData));
-      localStorage.setItem('wallet_address', walletAddress);
+      localStorage.setItem('wallet', JSON.stringify(walletData));
+
   
       alert(`Inscription réussie! Votre adresse de portefeuille: ${walletAddress}`);
       navigate('/login');
