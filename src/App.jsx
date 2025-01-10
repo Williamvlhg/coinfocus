@@ -1,3 +1,21 @@
+import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home'
+import Login from './pages/Connexion/Login';
+import Register from './pages/Connexion/Register';
+import Transaction from './pages/transactions/Transaction';
+function App() {
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/transaction" element={<Transaction />} />
+        <Route path="/" element={<Home />}/>
+      </Routes>
+    </Router>
+  )
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TradingPage from './Pages/trading/TradingPage';

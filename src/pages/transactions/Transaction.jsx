@@ -3,8 +3,6 @@ import Form from "../../Components/Form";
 import History from "./History";
 
 
-
-
 const Transaction = () => {
   const [wallet, setWallet] = useState(() => {
     const savedWallet = localStorage.getItem("wallet");
@@ -100,6 +98,7 @@ const Transaction = () => {
   return (
     <div className="App-transactions">
       <div className="header-transactions">
+
         <h1 className="white">Mon portefeuille</h1>
         <div className="balance-title white">
           <h2></h2>
@@ -143,6 +142,7 @@ const Transaction = () => {
                 fields={
                   currentOperation === "Deposit"
                     ? [
+
                         { name: "amount", label: "Montant", type: "number", required: true },
                         {
                           name: "currency",
@@ -157,6 +157,7 @@ const Transaction = () => {
                       ]
                     : currentOperation === "Withdraw"
                     ? [
+
                         { name: "amount", label: "Montant", type: "number", required: true },
                         { name: "address", label: "L'adresse du portefeuille", type: "text", required: true },
                       ]
