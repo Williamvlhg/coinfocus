@@ -110,13 +110,13 @@ const Transaction = () => {
 
       <div className="main-transactions">
         <div className="card" onClick={() => openModal("Deposit")}>
-          <div className="card-title">Deposit</div>
-          <div className="card-description">Add funds to your wallet</div>
+          <div className="card-title">Dépot</div>
+          <div className="card-description">Ajouter des fonds à votre portefeuille</div>
         </div>
 
         <div className="card" onClick={() => openModal("Withdraw")}>
-          <div className="card-title">Withdraw</div>
-          <div className="card-description">Withdraw funds from your crypto wallet to your external wallet</div>
+          <div className="card-title">Retrait</div>
+          <div className="card-description">Retirer des fonds de votre portefeuille crypto vers votre portefeuille externe</div>
         </div>
       </div>
 
