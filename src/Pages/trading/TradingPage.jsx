@@ -15,6 +15,7 @@ const getFromLocalStorage = (key, defaultValue) => {
     }
   };
   
+  
   const TradingPage = () => {
     const [balance, setBalance] = useState(() => getFromLocalStorage("balance", 1000));
     const [holdings, setHoldings] = useState(() =>
