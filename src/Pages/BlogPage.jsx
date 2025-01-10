@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import PostForm from "../../Components/MiniBlog/PostForm";
-import PostList from "../../Components/MiniBlog/PostList";
+import PostForm from "../Components/MiniBlog/PostForm";
+import PostList from "../Components/MiniBlog/PostList";
 import "./BlogPage.css";
 
 const BlogPage = () => {

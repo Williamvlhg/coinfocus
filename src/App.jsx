@@ -1,9 +1,9 @@
 // import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import TradingPage from './Pages/trading/TradingPage';
-import BlogPage from './Pages/blog/BlogPage';
-import CryptoDetailsPage from './Pages/crypto/CryptoDetailsPage';
+import TradingPage from './pages/trading/TradingPage';
+import BlogPage from './pages/blog/BlogPage';
+import CryptoDetailsPage from './pages/crypto/CryptoDetailsPage';
 
 
 import './App.css'
