@@ -7,7 +7,7 @@ const Login = () => {
 
   const loginFields = [
     { name: 'email', label: 'Email', type: 'email', required: true },
-    { name: 'password', label: 'Password', type: 'password', required: true },
+    { name: 'password', label: 'Mot de passe', type: 'password', required: true },
   ];
 
   const handleLoginSubmit = (data) => {
@@ -28,7 +28,7 @@ const Login = () => {
     }
   };
 
-  return <Form title="Login" fields={loginFields} onSubmit={handleLoginSubmit} />;
+  return <Form title="Connexion" fields={loginFields} onSubmit={handleLoginSubmit} />;
 };
 
 export default Login;

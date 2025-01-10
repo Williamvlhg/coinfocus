@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Form from "../../Components/Form";
 import History from "./History";
-// import Header from "../../Components/Header";
 
 
 
@@ -101,11 +100,11 @@ const Transaction = () => {
   return (
     <div className="App-transactions">
       <div className="header-transactions">
-        <h1 className="white">Crypto Wallet</h1>
+        <h1 className="white">Mon portefeuille</h1>
         <div className="balance-title white">
           <h2></h2>
-          <h2>Cryptos balance : {wallet.cryptoBalance}</h2>
-          <h2>Dollars balance: ${wallet.dollarBalance}</h2>
+          <h2>Solde Crypto : {wallet.cryptoBalance}</h2>
+          <h2>Solde en dollars : {wallet.dollarBalance} $</h2>
           <h2></h2>
         </div>
       </div>
@@ -144,10 +143,10 @@ const Transaction = () => {
                 fields={
                   currentOperation === "Deposit"
                     ? [
-                        { name: "amount", label: "Amount", type: "number", required: true },
+                        { name: "amount", label: "Montant", type: "number", required: true },
                         {
                           name: "currency",
-                          label: "Currency",
+                          label: "Devise",
                           type: "select",
                           options: [
                             { value: "crypto", label: "Crypto" },
@@ -158,11 +157,11 @@ const Transaction = () => {
                       ]
                     : currentOperation === "Withdraw"
                     ? [
-                        { name: "amount", label: "Amount", type: "number", required: true },
-                        { name: "address", label: "Wallet Address", type: "text", required: true },
+                        { name: "amount", label: "Montant", type: "number", required: true },
+                        { name: "address", label: "L'adresse du portefeuille", type: "text", required: true },
                       ]
                     : [
-                        { name: "amount", label: "Amount", type: "number", required: true },
+                        { name: "amount", label: "Montant", type: "number", required: true },
                         { name: "iban", label: "IBAN", type: "text", required: true },
                       ]
                 }
