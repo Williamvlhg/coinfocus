@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../Components/Header';
 import './Profile.css';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [profile, setProfile] = useState({
         name: '',
         email: '',
-        phone: '',
         bio: '',
-        preferences: {
-            darkMode: false,
-            notifications: true
-        }
+        walletAddress: ''
     });
+    const navigate = useNavigate();
 
     // Load profile from localStorage on component mount
     useEffect(() => {
@@ -34,14 +32,36 @@ const Profile = () => {
                     : value
             };
             
-            localStorage.setItem('userProfile', JSON.stringify(newProfile));
+            localStorage.setItem('user', JSON.stringify(newProfile));
             return newProfile;
         });
     };
 
     const handleDelete = () => {
-        console.log('Account deleted');
-        setIsModalOpen(false);
+        try {
+            // Remove user data from localStorage
+            localStorage.removeItem('user');
+            localStorage.removeItem('userProfile');
+            
+            // Reset form state
+            setProfile({
+                name: '',
+                email: '',
+                phone: '',
+                bio: '',
+                walletAddress: ''
+            });
+            
+            // Close modal
+            setIsModalOpen(false);
+            
+            // Redirect to home page
+            navigate('/');
+            
+        } catch (error) {
+            console.error('Error deleting account:', error);
+            setError('Failed to delete account');
+        }
     };
 
 
@@ -82,6 +102,17 @@ const Profile = () => {
                         id="password"
                         name="password"
                         value={profile.password}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="walletAddress">Adresse Wallet:</label>
+                    <input
+                        type="text"
+                        id="walletAddress"
+                        name="walletAddress"
+                        value={profile.walletAddress}
                         onChange={handleChange}
                     />
                 </div>
