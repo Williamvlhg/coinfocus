@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from "recharts";
-import PostList from "../../components/MiniBlog/PostList";
-import PostForm from "../../components/MiniBlog/PostForm";
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
+import PostList from "../../Components/MiniBlog/PostList";
+import PostForm from "../../Components/MiniBlog/PostForm";
 
 const CryptoDetailsPage = () => {
   const { cryptoId } = useParams();
@@ -27,10 +34,12 @@ const CryptoDetailsPage = () => {
         const cryptoData = await cryptoResponse.json();
         const priceHistoryData = await historyResponse.json();
 
-        const formattedData = priceHistoryData.prices.map(([timestamp, price]) => ({
-          date: new Date(timestamp).toLocaleDateString(),
-          price,
-        }));
+        const formattedData = priceHistoryData.prices.map(
+          ([timestamp, price]) => ({
+            date: new Date(timestamp).toLocaleDateString(),
+            price,
+          })
+        );
 
         setCryptoData(cryptoData);
         setPriceHistory(formattedData);
@@ -57,7 +66,10 @@ const CryptoDetailsPage = () => {
       <h1>
         {cryptoData.name} ({cryptoData.symbol.toUpperCase()})
       </h1>
-      <p>{cryptoData.description?.en?.slice(0, 200) || "Aucune description disponible."}</p>
+      <p>
+        {cryptoData.description?.en?.slice(0, 200) ||
+          "Aucune description disponible."}
+      </p>
 
       <div className="price-chart">
         <h2>Évolution des prix (7 derniers jours)</h2>
@@ -73,14 +85,19 @@ const CryptoDetailsPage = () => {
       <div className="crypto-stats">
         <h2>Statistiques</h2>
         <ul>
-          <li>Volume : ${cryptoData.market_data?.total_volume?.usd?.toLocaleString()}</li>
+          <li>
+            Volume : $
+            {cryptoData.market_data?.total_volume?.usd?.toLocaleString()}
+          </li>
           <li>
             Capitalisation : $
             {cryptoData.market_data?.market_cap?.usd?.toLocaleString()}
           </li>
           <li>
             Variation (24h) :{" "}
-            {cryptoData.market_data?.price_change_percentage_24h?.toFixed(2) || 0}%
+            {cryptoData.market_data?.price_change_percentage_24h?.toFixed(2) ||
+              0}
+            %
           </li>
         </ul>
       </div>

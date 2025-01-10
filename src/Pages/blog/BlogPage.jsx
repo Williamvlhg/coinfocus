@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import PostForm from '../../components/MiniBlog/PostForm';
-import PostList from '../../components/MiniBlog/PostList';
-import './BlogPage.css'
+import React, { useState, useEffect } from "react";
+import PostForm from "../../Components/MiniBlog/PostForm";
+import PostList from "../../Components/MiniBlog/PostList";
+import "./BlogPage.css";
 
 const BlogPage = () => {
   // Déclaration des hooks de manière stable, en dehors de toute condition.
-  const [posts, setPosts] = useState(() =>
-    JSON.parse(localStorage.getItem('blogPosts')) || []
+  const [posts, setPosts] = useState(
+    () => JSON.parse(localStorage.getItem("blogPosts")) || []
   );
-  const [sortBy, setSortBy] = useState('date');
+  const [sortBy, setSortBy] = useState("date");
   const [loading, setLoading] = useState(true);
   const [showForms, setShowForms] = useState(false); // Définir l'état pour masquer/afficher les formulaires
 
   // Tri des posts en fonction de la valeur de `sortBy`
   const sortedPosts = [...posts].sort((a, b) => {
-    if (sortBy === 'date') {
+    if (sortBy === "date") {
       return new Date(b.date) - new Date(a.date);
     }
-    if (sortBy === 'likes') {
+    if (sortBy === "likes") {
       return (b.likes || 0) - (a.likes || 0);
     }
     return 0;
@@ -30,7 +30,7 @@ const BlogPage = () => {
   }, []); // Ce useEffect est exécuté une seule fois au montage
 
   useEffect(() => {
-    localStorage.setItem('blogPosts', JSON.stringify(posts)); // Sauvegarde les posts dans le localStorage
+    localStorage.setItem("blogPosts", JSON.stringify(posts)); // Sauvegarde les posts dans le localStorage
   }, [posts]);
 
   const handleAddPost = (newPost) => {
@@ -67,19 +67,16 @@ const BlogPage = () => {
     <div>
       <h1>Mini-Blog</h1>
       <div className="select-container">
-      <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-        <option value="date">Date</option>
-        <option value="likes">Pertinence</option>
-      </select>
+        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+          <option value="date">Date</option>
+          <option value="likes">Pertinence</option>
+        </select>
 
-      {/* Bouton pour afficher/masquer les formulaires */}
-      <button 
-        className="toggle-button" 
-        onClick={toggleFormsVisibility}
-      >
-        {showForms ? "Masquer les formulaires" : "Ajouter un commentaire"}
-      </button>
-</div>
+        {/* Bouton pour afficher/masquer les formulaires */}
+        <button className="toggle-button" onClick={toggleFormsVisibility}>
+          {showForms ? "Masquer les formulaires" : "Ajouter un commentaire"}
+        </button>
+      </div>
       {/* Affichage conditionnel des formulaires */}
       {showForms && (
         <div className="post-form-container">
