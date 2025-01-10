@@ -28,6 +28,8 @@ const Header = () => {
               <li><Link to="/trading">Passer un ordre</Link></li>
               <li><Link to="/blog">Communauté</Link></li>
               <li><Link to="/profile">Profile</Link></li>
+              <li><Link to="/crypto/:cryptoId">Crypto details</Link></li>
+
             </div>
 
             <div className="auth-links">

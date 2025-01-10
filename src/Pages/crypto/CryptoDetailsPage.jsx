@@ -11,6 +11,27 @@ import {
 import PostList from "../../Components/MiniBlog/PostList";
 import PostForm from "../../Components/MiniBlog/PostForm";
 
+// Fonction utilitaire pour ajouter un délai entre les requêtes
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Générer des données fictives
+const generateFakePriceData = () => {
+  const data = [];
+  let currentPrice = 50000; // Prix initial de la crypto-monnaie (par exemple Bitcoin)
+  for (let i = 0; i < 7; i++) {
+    const date = new Date();
+    date.setDate(date.getDate() - (7 - i)); // Récupère les 7 derniers jours
+    const priceChange = (Math.random() - 0.5) * 2000; // Variation aléatoire entre -2000 et +2000
+    currentPrice += priceChange;
+
+    data.push({
+      date: date.toLocaleDateString(),
+      price: Math.max(0, currentPrice), // Empêche le prix de devenir négatif
+    });
+  }
+  return data;
+};
+
 const CryptoDetailsPage = () => {
   const { cryptoId } = useParams();
   const [cryptoData, setCryptoData] = useState(null);
@@ -19,34 +40,46 @@ const CryptoDetailsPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const [cryptoResponse, historyResponse] = await Promise.all([
-          fetch(`https://api.coingecko.com/api/v3/coins/${cryptoId}`),
-          fetch(
-            `https://api.coingecko.com/api/v3/coins/${cryptoId}/market_chart?vs_currency=usd&days=7`
-          ),
-        ]);
+      // Vérifiez si les données sont déjà dans le localStorage
+      const storedCryptoData = localStorage.getItem(`cryptoData-${cryptoId}`);
+      const storedPriceHistory = localStorage.getItem(`priceHistory-${cryptoId}`);
 
-        if (!cryptoResponse.ok || !historyResponse.ok) {
-          throw new Error("Erreur lors de la récupération des données.");
-        }
-
-        const cryptoData = await cryptoResponse.json();
-        const priceHistoryData = await historyResponse.json();
-
-        const formattedData = priceHistoryData.prices.map(
-          ([timestamp, price]) => ({
-            date: new Date(timestamp).toLocaleDateString(),
-            price,
-          })
-        );
-
-        setCryptoData(cryptoData);
-        setPriceHistory(formattedData);
-      } catch (error) {
-        console.error(error);
-      } finally {
+      if (storedCryptoData && storedPriceHistory) {
+        // Si elles existent, utilisez les données stockées
+        setCryptoData(JSON.parse(storedCryptoData));
+        setPriceHistory(JSON.parse(storedPriceHistory));
         setLoading(false);
+      } else {
+        try {
+          // Simuler des données de crypto-monnaie
+          const fakeCryptoData = {
+            name: "Bitcoin",
+            symbol: "BTC",
+            description: {
+              en: "Bitcoin is a decentralized digital currency without a central bank or single administrator."
+            },
+            market_data: {
+              total_volume: { usd: 35000000000 },
+              market_cap: { usd: 850000000000 },
+              price_change_percentage_24h: Math.random() * 10 - 5, // Variation de prix aléatoire entre -5% et +5%
+            },
+          };
+
+          // Générer des données fictives pour l'historique des prix
+          const generatedPriceHistory = generateFakePriceData();
+
+          // Stockage des données dans le localStorage
+          localStorage.setItem(`cryptoData-${cryptoId}`, JSON.stringify(fakeCryptoData));
+          localStorage.setItem(`priceHistory-${cryptoId}`, JSON.stringify(generatedPriceHistory));
+
+          // Mise à jour des états
+          setCryptoData(fakeCryptoData);
+          setPriceHistory(generatedPriceHistory);
+        } catch (error) {
+          console.error(error);
+        } finally {
+          setLoading(false);
+        }
       }
     };
 
@@ -86,18 +119,14 @@ const CryptoDetailsPage = () => {
         <h2>Statistiques</h2>
         <ul>
           <li>
-            Volume : $
-            {cryptoData.market_data?.total_volume?.usd?.toLocaleString()}
+            Volume : ${cryptoData.market_data?.total_volume?.usd?.toLocaleString()}
           </li>
           <li>
-            Capitalisation : $
-            {cryptoData.market_data?.market_cap?.usd?.toLocaleString()}
+            Capitalisation : ${cryptoData.market_data?.market_cap?.usd?.toLocaleString()}
           </li>
           <li>
-            Variation (24h) :{" "}
-            {cryptoData.market_data?.price_change_percentage_24h?.toFixed(2) ||
-              0}
-            %
+            Variation (24h) :
+            {cryptoData.market_data?.price_change_percentage_24h?.toFixed(2) || 0}%
           </li>
         </ul>
       </div>
