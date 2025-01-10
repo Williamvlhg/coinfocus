@@ -12,7 +12,7 @@ const Form = ({ title, fields, onSubmit }) => {
       <form onSubmit={handleSubmit}>
         {fields.map((field, index) => (
           <div key={index} className="form-input">
-            <label htmlFor={field.name}>{field.label}:</label>
+            <label htmlFor={field.name}>{field.label}</label>
             <input
               type={field.type}
               id={field.name}
