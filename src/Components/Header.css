@@ -9,33 +9,37 @@ nav {
 
 .wrapper {
   position: relative;
-  max-width: 1300px;
-  padding: 0px 30px;
+  max-width: 90%;
+  padding: 0px 50px;
   height: 70px;
   margin: auto;
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Added this */
+}
+
+.logo {
+  flex: 0 0 15%; /* Added fixed width */
 }
 
 .nav-links {
-  flex: 1;
+  flex: 0 0 80%; /* Takes most of the space */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
+  margin-left: 20px; /* Added spacing from logo */
 }
 
 .nav-links li a {
   color: #f2f2f2;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
-  padding: 9px 15px;
+  padding: 6px 8px; /* Reduced horizontal padding */
   border-radius: 5px;
   transition: all 0.3s ease;
 }
-
-
 
 .nav-links li a:hover {
   background: #3a3b3c;
@@ -43,17 +47,23 @@ nav {
 
 .main-links {
   display: flex;
-  gap: 1rem;
   justify-content: center;
-  margin: 0 auto;
+  width: 75%;
+  margin: 0;
+  padding-right: 15px; /* Reduced padding */
 }
 
 .auth-links {
   display: flex;
-  gap: 1rem;
-  margin-left: auto;
-  position: absolute;
-  right: 30px;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  right: 0;
+}
+
+.auth-links > span {
+  color: #f2f2f2;
+  margin: 0 4px; /* Reduced from 8px */
 }
 
 .content .row img {
@@ -102,8 +112,6 @@ nav {
   top: 10px;
 }
 
-
-
 @media screen and (max-width: 970px) {
   .nav-links {
     flex-direction: column;
@@ -115,5 +123,7 @@ nav {
     flex-direction: column;
     position: static;
     gap: 0;
+    width: 100%;
+    padding: 0;
   }
 }

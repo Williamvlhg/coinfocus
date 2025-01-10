@@ -8,6 +8,7 @@ import CryptoDetailsPage from './Pages/crypto/CryptoDetailsPage';
 import Login from './pages/Connexion/Login';
 import Register from './pages/Connexion/Register';
 import Transaction from './Pages/transactions/Transaction';
+import Profile from './pages/profile/Profile';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/trading" element={<TradingPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/crypto/:cryptoId" element={<CryptoDetailsPage />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/transaction" element={<Transaction />} />
